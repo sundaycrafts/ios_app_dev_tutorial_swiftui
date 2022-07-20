@@ -1,3 +1,7 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
+
 import Foundation
 
 struct DailyScrum: Identifiable {
@@ -7,7 +11,7 @@ struct DailyScrum: Identifiable {
     var lengthInMinutes: Int
     var theme: Theme
     
-    init (id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
+    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
         self.title = title
         self.attendees = attendees.map { Attendee(name: $0) }
@@ -21,10 +25,21 @@ extension DailyScrum {
         let id: UUID
         var name: String
         
-        init (id: UUID = UUID(), name: String) {
+        init(id: UUID = UUID(), name: String) {
             self.id = id
             self.name = name
         }
+    }
+    
+    struct Data {
+        var title: String  = ""
+        var attendees: [Attendee] = []
+        var lengthInMinutes: Double = 5
+        var theme: Theme = .seafoam
+    }
+    
+    var data: Data {
+        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
     }
 }
 
