@@ -18,6 +18,7 @@
 		CE69EA402880C24600BFE756 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69EA3F2880C24600BFE756 /* DailyScrum.swift */; };
 		CE69EA422880C3FC00BFE756 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69EA412880C3FC00BFE756 /* CardView.swift */; };
 		CE69EA442880C82200BFE756 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69EA432880C82200BFE756 /* TrailingIconLabelStyle.swift */; };
+		CE7464C62888B5220089E53D /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7464C52888B5220089E53D /* ScrumsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CE69EA3F2880C24600BFE756 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		CE69EA412880C3FC00BFE756 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CE69EA432880C82200BFE756 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
+		CE7464C52888B5220089E53D /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				CE69EA162880834000BFE756 /* Assets.xcassets */,
 				CE69EA182880834000BFE756 /* Preview Content */,
 				CE69EA412880C3FC00BFE756 /* CardView.swift */,
+				CE7464C52888B5220089E53D /* ScrumsView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				CE69EA402880C24600BFE756 /* DailyScrum.swift in Sources */,
 				CE69EA442880C82200BFE756 /* TrailingIconLabelStyle.swift in Sources */,
 				CE69EA3E2880BCC800BFE756 /* Theme.swift in Sources */,
+				CE7464C62888B5220089E53D /* ScrumsView.swift in Sources */,
 				CE69EA152880833D00BFE756 /* MeetingView.swift in Sources */,
 				CE69EA132880833D00BFE756 /* ScrumdingerApp.swift in Sources */,
 				CE69EA422880C3FC00BFE756 /* CardView.swift in Sources */,
