@@ -14,36 +14,44 @@ struct MeetingView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Seconds Elasped")
-                        .font(.caption)
+                            .font(.caption)
                     Label("300", systemImage: "hourglass.bottomhalf.fill")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining")
-                        .font(.caption)
+                            .font(.caption)
                     Label("600", systemImage: "hourglass.bottomhalf.fill")
                 }
             }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Time remaining")
-            .accessibilityValue("10 minites")
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Time remaining")
+                    .accessibilityValue("10 minites")
             Circle()
-                .strokeBorder(lineWidth: 24)
+                    .strokeBorder(lineWidth: 24)
             HStack {
                 Text("Seaker 1 of 3")
                 Spacer()
                 Button(action: {}) {
                     Image(systemName: "forward.fill")
                 }
-                .accessibilityLabel("Next speaker")
+                        .accessibilityLabel("Next speaker")
             }
         }
-        .padding()
+                .padding()
     }
 }
 
-struct MeetingView_Previews: PreviewProvider {
+class MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingView()
     }
+
+    #if DEBUG
+    @objc class func injected() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.rootViewController =
+                UIHostingController(rootView: MeetingView())
+    }
+    #endif
 }

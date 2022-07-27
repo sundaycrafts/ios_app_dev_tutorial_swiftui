@@ -15,23 +15,31 @@ struct ScrumsView: View {
                 NavigationLink(destination: DetailView(scrum: $scrum)) {
                     CardView(scrum: scrum)
                 }
-                .listRowBackground(scrum.theme.mainColor)
+                        .listRowBackground(scrum.theme.mainColor)
             }
         }
-        .navigationTitle("Daily Scrums")
-        .toolbar {
-            Button(action: {}) {
-                Image(systemName: "plus")
-            }
-            .accessibilityLabel("New Scrum")
-        }
+                .navigationTitle("Daily Scrums")
+                .toolbar {
+                    Button(action: {}) {
+                        Image(systemName: "plus")
+                    }
+                            .accessibilityLabel("New Scrum")
+                }
     }
 }
 
-struct ScrumsView_Previews: PreviewProvider {
+class ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ScrumsView(scrums: .constant(DailyScrum.sampleData))
         }
     }
+
+    #if DEBUG
+    @objc class func injected() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.rootViewController =
+                UIHostingController(rootView: ScrumsView(scrums: .constant(DailyScrum.sampleData)))
+    }
+    #endif
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailEditView: View {
     @Binding var data: DailyScrum.Data
     @State private var newAttendeeName = ""
-    
+
     var body: some View {
         Form {
             Section(header: Text("Meeting Info")) {
@@ -19,10 +19,10 @@ struct DetailEditView: View {
                     Slider(value: $data.lengthInMinutes, in: 5...30, step: 1) {
                         Text("Length")
                     }
-                    .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
+                            .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
                     Spacer()
                     Text("\(Int(data.lengthInMinutes)) minutes")
-                        .accessibilityHidden(true)
+                            .accessibilityHidden(true)
                 }
                 ThemePicker(selection: $data.theme)
             }
@@ -30,9 +30,9 @@ struct DetailEditView: View {
                 ForEach(data.attendees) { attendee in
                     Text(attendee.name)
                 }
-                .onDelete { indeces in
-                    data.attendees.remove(atOffsets: indeces)
-                }
+                        .onDelete { indeces in
+                            data.attendees.remove(atOffsets: indeces)
+                        }
                 HStack {
                     TextField("New Attendee", text: $newAttendeeName)
                     Button(action: {
@@ -43,17 +43,25 @@ struct DetailEditView: View {
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel("Add attendee")
+                                .accessibilityLabel("Add attendee")
                     }
-                    .disabled(newAttendeeName.isEmpty)
+                            .disabled(newAttendeeName.isEmpty)
                 }
             }
         }
     }
 }
 
-struct DetailEditView_Previews: PreviewProvider {
+class DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
         DetailEditView(data: .constant(DailyScrum.sampleData[0].data))
     }
+
+    #if DEBUG
+    @objc class func injected() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        windowScene?.windows.first?.rootViewController =
+                UIHostingController(rootView: DetailEditView(data: .constant(DailyScrum.sampleData[0].data)))
+    }
+    #endif
 }
