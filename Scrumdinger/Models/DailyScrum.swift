@@ -1,7 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-*/
-
 import Foundation
 
 struct DailyScrum: Identifiable {
@@ -10,13 +6,12 @@ struct DailyScrum: Identifiable {
     var attendees: [Attendee]
     var lengthInMinutes: Int
     var theme: Theme
+    var history: [History] = []
 
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
         self.title = title
-        self.attendees = attendees.map {
-            Attendee(name: $0)
-        }
+        self.attendees = attendees.map { Attendee(name: $0) }
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
     }
@@ -45,6 +40,14 @@ extension DailyScrum {
     }
 
     mutating func update(from data: Data) {
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        theme = data.theme
+    }
+
+    init(data: Data) {
+        id = UUID()
         title = data.title
         attendees = data.attendees
         lengthInMinutes = Int(data.lengthInMinutes)
