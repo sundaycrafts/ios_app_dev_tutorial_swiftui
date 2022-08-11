@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36EBC00E0FE0E1C4A51F1C6E /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC3F7F8DB549666029EC4 /* ErrorWrapper.swift */; };
 		36EBC1E58410F58FA414DEF1 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCCE8893521233E915D63 /* AVPlayer+Ding.swift */; };
 		36EBC5BC660B12AB38F16CDC /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCF2D40F291C2A4980301 /* History.swift */; };
 		36EBC6F16A6308AB01CEFAF1 /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC468D2AECE7B28CF0477 /* ScrumStore.swift */; };
 		36EBCACD08B7C90B18C90CA5 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC109208B5CC7069A134B /* MeetingHeaderView.swift */; };
+		36EBCCAD3C4BCF5028613B7C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC878A2625D924508E4A1 /* ErrorView.swift */; };
 		36EBCD72F451EB34DDD049C5 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EBC4BA34CCAE6AA1966654 /* ding.wav */; };
 		36EBCEFB7E401C743E12CB5D /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC8097EF0561EC4595F90 /* ScrumTimer.swift */; };
 		36EBCF6E58DC269FBBCE727A /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCC8B5814B630AAE105A2 /* MeetingFooterView.swift */; };
@@ -52,9 +54,11 @@
 
 /* Begin PBXFileReference section */
 		36EBC109208B5CC7069A134B /* MeetingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
+		36EBC3F7F8DB549666029EC4 /* ErrorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		36EBC468D2AECE7B28CF0477 /* ScrumStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumStore.swift; sourceTree = "<group>"; };
 		36EBC4BA34CCAE6AA1966654 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		36EBC8097EF0561EC4595F90 /* ScrumTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
+		36EBC878A2625D924508E4A1 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		36EBCC8B5814B630AAE105A2 /* MeetingFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 		36EBCCE8893521233E915D63 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		36EBCF2D40F291C2A4980301 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				36EBC109208B5CC7069A134B /* MeetingHeaderView.swift */,
 				36EBCC8B5814B630AAE105A2 /* MeetingFooterView.swift */,
 				36EBC27A9C97DA21DEFD086D /* Resources */,
+				36EBC878A2625D924508E4A1 /* ErrorView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		CE69EA3C2880B02E00BFE756 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				36EBC3F7F8DB549666029EC4 /* ErrorWrapper.swift */,
 				CE69EA3D2880BCC800BFE756 /* Theme.swift */,
 				CE69EA3F2880C24600BFE756 /* DailyScrum.swift */,
 				36EBC8097EF0561EC4595F90 /* ScrumTimer.swift */,
@@ -343,6 +349,8 @@
 				36EBC1E58410F58FA414DEF1 /* AVPlayer+Ding.swift in Sources */,
 				36EBC5BC660B12AB38F16CDC /* History.swift in Sources */,
 				36EBC6F16A6308AB01CEFAF1 /* ScrumStore.swift in Sources */,
+				36EBC00E0FE0E1C4A51F1C6E /* ErrorWrapper.swift in Sources */,
+				36EBCCAD3C4BCF5028613B7C /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
