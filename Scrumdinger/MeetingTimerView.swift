@@ -6,6 +6,7 @@ import SwiftUI
 
 struct MeetingTimerView: View {
     let speakers: [ScrumTimer.Speaker]
+    let isRecording: Bool
     let theme: Theme
     
     private var currentSpeaker: String {
@@ -20,6 +21,10 @@ struct MeetingTimerView: View {
                         Text(currentSpeaker)
                                 .font(.title)
                         Text("is speaking")
+                        Image(systemName: isRecording ? "mic" : "mic.slash")
+                            .font(.title)
+                            .padding(.top)
+                            .accessibilityLabel(isRecording ? "with transcription" : "without transcription")
                     }
                 }
                 .accessibilityElement(children: .combine)
@@ -43,14 +48,14 @@ class MeetingTimerView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        MeetingTimerView(speakers: speakers, theme: .yellow)
+        MeetingTimerView(speakers: speakers, isRecording: true, theme: .yellow)
     }
 
     #if DEBUG
     @objc class func injected() {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         windowScene?.windows.first?.rootViewController =
-                UIHostingController(rootView: MeetingTimerView(speakers: speakers, theme: .yellow))
+                UIHostingController(rootView: MeetingTimerView(speakers: speakers, isRecording: true, theme: .yellow))
     }
     #endif
 }
